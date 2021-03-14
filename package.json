@@ -15,17 +15,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "src/**/*.{js,json}": [
-      "prettier --write"
-    ]
+    "eject": "react-scripts eject",
+    "prepare": "husky install"
   },
   "browserslist": {
     "production": [
