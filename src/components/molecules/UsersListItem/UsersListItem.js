@@ -1,45 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-
-const Wrapepr = styled.li`
-  display: flex;
-  align-items: center;
-  position: relative;
-  &:not(:last-child)::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 1px;
-    background-color: lightgrey;
-  }
-`;
-
-const StyledButton = styled.button`
-  width: 25px;
-  height: 25px;
-  background-color: ${({ theme }) => theme.colors.grey};
-  border-radius: 50px;
-  border: none;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  svg {
-    width: 100%;
-    height: 100%;
-  }
-`;
+import Button from 'components/atoms/Button/Button';
+import { Wrapepr, StyledInfo } from './UsersListItem.styles';
+import { AverageScore } from 'components/atoms/AverageScore/AverageScore';
 
 const UsersListItem = ({ userData: { average, name, attendance = '0%' } }) => (
   <Wrapepr>
-    <div>{average}</div>
-    <div>
-      <p>{name}</p>
-      <p>{attendance}</p>
-    </div>
+    <AverageScore average={average} />
+    <StyledInfo>
+      <p>
+        {name}
+        <Button />
+      </p>
+      <p>attendance: {attendance}</p>
+    </StyledInfo>
   </Wrapepr>
 );
 
