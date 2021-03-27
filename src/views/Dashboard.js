@@ -1,23 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { ViewWrapper } from 'components/molecules/ViewWrapper/ViewWrapper';
 import UsersList from 'components/organisms/UsersList/UsersList';
-import PropTypes from 'prop-types';
+import { UsersContext } from 'providers/UsersProvider';
 
-const Dashboard = ({ deleteUser, users }) => (
-  <ViewWrapper>
-    <UsersList deleteUser={deleteUser} users={users} />
-  </ViewWrapper>
-);
+const Dashboard = () => {
+  const { users } = useContext(UsersContext);
 
-Dashboard.propTypes = {
-  users: PropTypes.arrayOf(
-    PropTypes.shape({
-      average: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      attendance: PropTypes.string,
-    })
-  ),
-  deleteUser: PropTypes.func,
+  return (
+    <ViewWrapper>
+      <UsersList users={users} />
+    </ViewWrapper>
+  );
 };
 
 export default Dashboard;

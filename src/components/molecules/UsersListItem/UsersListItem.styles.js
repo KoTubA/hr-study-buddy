@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Wrapepr = styled.li`
+export const Wrapper = styled.li`
   display: flex;
   align-items: center;
   position: relative;
