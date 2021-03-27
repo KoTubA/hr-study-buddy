@@ -1,16 +1,16 @@
 import React from 'react';
-import UsersListItem from 'components/molecules/UsersListItem/UsersListItem';
-import { StyledList } from './UserList.styles';
-import { Title } from 'components/atoms/Title/Title';
 import PropTypes from 'prop-types';
+import UsersListItem from 'components/molecules/UsersListItem/UsersListItem';
+import { StyledList } from './UsersList.styles';
+import { Title } from 'components/atoms/Title/Title';
 
-const UsersList = ({ users, deleteUser }) => {
+const UsersList = ({ users }) => {
   return (
     <>
       <Title>Students list</Title>
       <StyledList>
         {users.map((userData) => (
-          <UsersListItem deleteUser={deleteUser} key={userData.name} userData={userData} />
+          <UsersListItem key={userData.name} userData={userData} />
         ))}
       </StyledList>
     </>
