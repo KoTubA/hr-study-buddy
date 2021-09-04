@@ -3,7 +3,6 @@ import { Title } from 'components/atoms/Title/Title';
 import { ViewWrapper } from 'components/molecules/ViewWrapper/ViewWrapper';
 import FormField from 'components/molecules/FormField/FormField';
 import { Button } from 'components/atoms/Button/Button';
-import PropTypes from 'prop-types';
 import { UsersContext } from 'providers/UsersProvider';
 
 const initialFormState = {
@@ -37,16 +36,6 @@ const AddUser = () => {
       <Button type="submit">Add</Button>
     </ViewWrapper>
   );
-};
-
-AddUser.propTypes = {
-  handleAddUser: PropTypes.func.isRequired,
-  formValues: PropTypes.shape({
-    average: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    attendance: PropTypes.string,
-  }),
-  handleInputChange: PropTypes.func.isRequired,
 };
 
 export default AddUser;
