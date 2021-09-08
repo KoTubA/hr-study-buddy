@@ -1,33 +1,25 @@
-import { useEffect, useState } from 'react';
+import { useCallback } from 'react';
 
-export const useStudents = ({ groupId = '' } = {}) => {
-  const [students, setStudents] = useState([]);
-  const [groups, setGroups] = useState([]);
-
-  useEffect(() => {
-    (async () => {
-      try {
-        const result = await fetch('/groups');
-        const data = await result.json();
-        setGroups(data.groups);
-      } catch (e) {
-        console.log(e);
-      }
-    })();
+export const useStudents = () => {
+  const getGroups = useCallback(async () => {
+    try {
+      const result = await fetch('/groups');
+      const data = await result.json();
+      return data.groups;
+    } catch (e) {
+      console.log(e);
+    }
   }, []);
 
-  useEffect(() => {
-    if (!groupId) return;
-    (async () => {
-      try {
-        const result = await fetch(`/students/${groupId}`);
-        const data = await result.json();
-        setStudents(data.students);
-      } catch (e) {
-        console.log(e);
-      }
-    })();
-  }, [groupId]);
+  const getStudents = useCallback(async (groupId) => {
+    try {
+      const result = await fetch(`/students/${groupId}`);
+      const data = await result.json();
+      return data.students;
+    } catch (e) {
+      console.log(e);
+    }
+  }, []);
 
   const findStudents = async (searchPhrase) => {
     try {
@@ -36,7 +28,6 @@ export const useStudents = ({ groupId = '' } = {}) => {
         body: searchPhrase,
       });
       const data = await result.json();
-      console.log(data);
       return data;
     } catch (e) {
       console.log(e);
@@ -44,8 +35,8 @@ export const useStudents = ({ groupId = '' } = {}) => {
   };
 
   return {
-    students,
-    groups,
+    getGroups,
+    getStudents,
     findStudents,
   };
 };
