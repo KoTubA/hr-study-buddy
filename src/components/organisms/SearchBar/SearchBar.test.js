@@ -1,4 +1,5 @@
-import { render, screen, fireEvent } from 'test-utils';
+import '@testing-library/jest-dom';
+import { render, screen, fireEvent, waitFor } from 'test-utils';
 import { setupServer } from 'msw/node';
 import { handlers } from 'mocks/handlers';
 import { SearchBar } from './SearchBar';
@@ -22,5 +23,17 @@ describe('Search Bar', () => {
     fireEvent.change(input, { target: { value: 'ad' } });
 
     await screen.findByText(/Adam Romański/);
+  });
+
+  it('Hides the results when input is empty', async () => {
+    render(<SearchBar />);
+    const input = screen.getByPlaceholderText('Search');
+    fireEvent.change(input, { target: { value: 'ad' } });
+    await screen.findByText(/Adam Romański/);
+
+    fireEvent.change(input, { target: { value: '' } });
+    await waitFor(() => {
+      expect(screen.getByLabelText('results')).not.toBeVisible();
+    });
   });
 });
