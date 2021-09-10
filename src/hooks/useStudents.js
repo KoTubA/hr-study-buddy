@@ -11,9 +11,19 @@ export const useStudents = () => {
     }
   }, []);
 
-  const getStudents = useCallback(async (groupId) => {
+  const getStudentById = useCallback(async (groupId) => {
     try {
       const result = await fetch(`/students/${groupId}`);
+      const data = await result.json();
+      return data.students;
+    } catch (e) {
+      console.log(e);
+    }
+  }, []);
+
+  const getStudentsByGroup = useCallback(async (groupId) => {
+    try {
+      const result = await fetch(`/groups/${groupId}`);
       const data = await result.json();
       return data.students;
     } catch (e) {
@@ -36,7 +46,8 @@ export const useStudents = () => {
 
   return {
     getGroups,
-    getStudents,
+    getStudentById,
+    getStudentsByGroup,
     findStudents,
   };
 };
