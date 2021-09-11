@@ -14,7 +14,7 @@ const StudentsListItem = ({ userData: { average, name, attendance = '0%' }, ...p
           {name}
           <DeleteButton />
         </p>
-        <p>attendance: {attendance}</p>
+        <p>attendance: {attendance}%</p>
       </StyledInfo>
     </Wrapper>
   );
