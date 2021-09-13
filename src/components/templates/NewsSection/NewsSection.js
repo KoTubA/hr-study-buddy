@@ -32,7 +32,13 @@ const NewsSection = () => {
         query,
       }),
     })
-      .then((res) => res.json())
+      .then((res) => {
+        if (res.ok) {
+          res.json();
+        } else {
+          throw new Error(res);
+        }
+      })
       .then(({ data }) => {
         setArticles(data.allArticles);
       })
