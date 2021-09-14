@@ -1,9 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { useError } from 'hooks/useError';
 
 const AuthContext = React.createContext({});
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const { dispatchError } = useError();
 
   useEffect(() => {
     const token = localStorage.getItem('token');
@@ -42,7 +44,7 @@ export const AuthProvider = ({ children }) => {
         throw new Error(response);
       }
     } catch (e) {
-      console.log('Please provide valid user data');
+      dispatchError('Invalid email or password');
     }
   };
 
