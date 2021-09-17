@@ -19,7 +19,7 @@ export const WidgetHandler = styled.button`
   background-color: ${({ theme }) => theme.colors.darkGrey};
   transform: rotate(-90deg);
   position: absolute;
-  left: -55px;
+  left: -57px;
   border-radius: 8px 8px 0 0;
   top: 40px;
   color: white;
@@ -30,6 +30,7 @@ export const WidgetHandler = styled.button`
 export const NotesWrapper = styled.div`
   max-height: 700px;
   overflow-y: scroll;
+  min-height: 110px;
   padding: 20px 60px;
   display: flex;
   flex-direction: column;
