@@ -3,7 +3,7 @@ import { Title } from 'components/atoms/Title/Title';
 import { useRemoveNoteMutation } from 'store';
 import { NoteWrapper, StyledDeleteButton } from 'components/molecules/Note/Note.styles';
 
-const Note = ({ title, content, id }) => {
+const Note = ({ title = 'Untitled', content = 'No content', id }) => {
   const [removeNote] = useRemoveNoteMutation();
 
   const handleRemoveNote = () => {
@@ -14,7 +14,7 @@ const Note = ({ title, content, id }) => {
     <NoteWrapper>
       <Title>{title}</Title>
       <p>{content}</p>
-      <StyledDeleteButton onClick={handleRemoveNote} />
+      <StyledDeleteButton aria-label="Delete" onClick={handleRemoveNote} />
     </NoteWrapper>
   );
 };
