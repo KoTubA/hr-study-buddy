@@ -45,6 +45,7 @@ export const SearchResults = styled.ul`
   display: flex;
   flex-direction: column;
   background-color: ${({ theme }) => theme.colors.white};
+  box-shadow: -2px 4px 10px rgba(115, 124, 142, 0.09);
 `;
 
 export const SearchResultsItem = styled.li`

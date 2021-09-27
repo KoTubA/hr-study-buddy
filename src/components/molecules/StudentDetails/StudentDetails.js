@@ -2,12 +2,15 @@ import React from 'react';
 import { Title } from 'components/atoms/Title/Title';
 import { Average } from 'components/atoms/Average/Average';
 import { BigAverage, StyledDetails, StyledInfo, StyledLabel, StyledSubjectInfo, Wrapper } from 'components/molecules/StudentDetails/StudentDetails.styles';
+import { Button } from 'components/atoms/Button/Button';
 
-const StudentDetails = ({ student }) => {
+const StudentDetails = ({ student, handleClose }) => {
   return (
     <Wrapper>
       <BigAverage value={student.average}>{student.average}</BigAverage>
-      <Title isBig>{student.name}</Title>
+      <Title isBig as="h3">
+        {student.name}
+      </Title>
       <StyledDetails>
         <StyledLabel>Course:</StyledLabel>
         <StyledInfo isBig>{student.course}</StyledInfo>
@@ -19,6 +22,7 @@ const StudentDetails = ({ student }) => {
           </StyledSubjectInfo>
         ))}
       </StyledDetails>
+      <Button onClick={handleClose}>Close</Button>
     </Wrapper>
   );
 };
