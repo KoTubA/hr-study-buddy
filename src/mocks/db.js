@@ -1,7 +1,7 @@
 import { factory, primaryKey } from '@mswjs/data';
 import faker from 'faker';
 
-faker.seed(123);
+faker.seed(120);
 
 const groups = ['A', 'B', 'C'];
 const eventTypes = ['workshop', 'exam', 'lecture'];

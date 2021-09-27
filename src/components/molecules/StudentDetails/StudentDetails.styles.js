@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Average } from 'components/atoms/Average/Average';
 
 export const Wrapper = styled.div`
-  width: 100%;
+  min-width: 600px;
   padding: 40px;
   position: relative;
   display: flex;
@@ -22,6 +22,7 @@ export const BigAverage = styled(Average)`
 export const StyledDetails = styled.div`
   width: 100%;
   padding: 40px;
+  margin-bottom: 50px;
 `;
 
 export const StyledLabel = styled.h3`

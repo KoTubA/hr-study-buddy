@@ -1,5 +1,5 @@
 import MainTemplate from 'components/templates/MainTemplate/MainTemplate';
-import { Wrapper } from 'views/Root.styles';
+import { Wrapper } from 'views/AuthenticatedApp.styles.js';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import Dashboard from 'views/Dashboard';
 import Notes from 'views/Notes';
