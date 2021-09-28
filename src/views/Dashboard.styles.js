@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { ViewWrapper } from 'components/molecules/ViewWrapper/ViewWrapper';
+import { Title } from 'components/atoms/Title/Title';
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -7,6 +8,15 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   padding: 20px 50px;
+`;
+
+export const LoaderWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const GroupWrapper = styled(ViewWrapper)`
@@ -32,4 +42,8 @@ export const TitleWrapper = styled.div`
   nav a:hover {
     background-color: ${({ theme }) => theme.colors.lightPurple};
   }
+`;
+
+export const LoaderTitle = styled(Title)`
+  margin-top: 0px;
 `;

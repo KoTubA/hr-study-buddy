@@ -1,11 +1,12 @@
 import styled from 'styled-components';
+import { LoaderWrapper } from 'views/Dashboard.styles';
 
 export const Wrapper = styled.div`
   width: 400px;
   height: auto;
+  min-height: 124px;
   transform: ${({ isOpen }) => (isOpen ? 'translateX(0)' : 'translateX(400px)')};
   transition: transform 0.6s ease-in-out;
-  max-height: 700px;
   position: absolute;
   right: 0;
   top: 40px;
@@ -29,9 +30,16 @@ export const WidgetHandler = styled.button`
 
 export const NotesWrapper = styled.div`
   max-height: 700px;
-  overflow-y: scroll;
-  min-height: 110px;
+  overflow-y: auto;
   padding: 20px 60px;
   display: flex;
   flex-direction: column;
+
+  h5 {
+    margin: 0px;
+  }
+`;
+
+export const InfoWrapper = styled(LoaderWrapper)`
+  min-height: 120px;
 `;

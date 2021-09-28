@@ -7,7 +7,7 @@ export const Average = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: ${({ theme }) => theme.fontSize.s};
+  font-size: ${({ theme }) => theme.fontSize.xs};
   color: ${({ theme }) => theme.colors.white};
   font-weight: bold;
   background: ${({ theme, value }) => {

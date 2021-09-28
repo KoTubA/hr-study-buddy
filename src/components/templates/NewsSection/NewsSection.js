@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { ArticleWrapper, ContentWrapper, NewsSectionHeader, TitleWrapper, Wrapper } from './NewsSection.styles';
+import { ArticleWrapper, ContentWrapper, NewsSectionHeader, TitleWrapper, Wrapper, LoaderWrapper } from './NewsSection.styles';
 import { Button } from 'components/atoms/Button/Button';
+import Loading from 'components/molecules/Loading/Loading';
 
 export const query = `
          {
@@ -65,7 +66,15 @@ const NewsSection = () => {
           </ArticleWrapper>
         ))
       ) : (
-        <NewsSectionHeader>{error ? error : 'Loading...'}</NewsSectionHeader>
+        <NewsSectionHeader>
+          {error ? (
+            error
+          ) : (
+            <LoaderWrapper>
+              <Loading />
+            </LoaderWrapper>
+          )}
+        </NewsSectionHeader>
       )}
     </Wrapper>
   );

@@ -14,7 +14,7 @@ export const Wrapper = styled.div`
 export const BigAverage = styled(Average)`
   width: 68px;
   height: 68px;
-  font-size: ${({ theme }) => theme.fontSize.xl};
+  font-size: ${({ theme }) => theme.fontSize.xxl};
   position: absolute;
   left: 40px;
 `;
@@ -32,7 +32,7 @@ export const StyledLabel = styled.h3`
 `;
 
 export const StyledInfo = styled.p`
-  font-size: ${({ theme, isBig }) => (isBig ? theme.fontSize.xl : theme.fontSize.l)};
+  font-size: ${({ theme, isBig }) => (isBig ? theme.fontSize.xxl : theme.fontSize.l)};
   color: ${({ theme }) => theme.colors.darkGrey};
   margin: 10px 20px 20px 0;
 `;

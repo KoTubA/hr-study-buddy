@@ -4,10 +4,18 @@ import FormField from 'components/molecules/FormField/FormField';
 export const Wrapper = styled.div`
   width: 100%;
   height: 100%;
+  padding: 20px 50px 0px 50px;
+  display: flex;
+  flex-direction: column;
+`;
+
+export const NotesSection = styled.div`
+  width: 100%;
   display: grid;
-  grid-template-columns: 0.7fr 1.3fr;
+  padding-bottom: 50px;
+  grid-template-columns: 1fr 1.5fr;
   grid-gap: 30px;
-  padding: 30px;
+  align-items: flex-start;
 `;
 
 export const FormWrapper = styled.form`
@@ -15,19 +23,21 @@ export const FormWrapper = styled.form`
   background: ${({ theme }) => theme.colors.white};
   border-radius: 25px;
   width: 100%;
-  height: 80%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
 `;
 
 export const StyledFormField = styled(FormField)`
-  height: ${({ isTextarea }) => (isTextarea ? '300px' : 'unset')};
+  height: ${({ isTextarea }) => (isTextarea ? '400px' : 'unset')};
 `;
 
 export const NotesWrapper = styled.div`
-  padding: 20px 60px;
+  padding: 0px 60px 20px 60px;
   display: flex;
   flex-direction: column;
+
+  h5 {
+    margin: 0px;
+  }
 `;

@@ -1,20 +1,12 @@
 import React from 'react';
-import { SpinBlade, SpinLoader, LoaderTitle, Wrapper } from './Loading.styles';
+import { Wrapper } from './Loading.styles';
+import SpinLoader from 'components/atoms/SpinLoader/SpinLoader';
 
-const StudentDetails = () => {
+const StudentDetails = ({ children }) => {
   return (
     <Wrapper>
-      <LoaderTitle as="h3">Loading...</LoaderTitle>
-      <SpinLoader>
-        <SpinBlade />
-        <SpinBlade />
-        <SpinBlade />
-        <SpinBlade />
-        <SpinBlade />
-        <SpinBlade />
-        <SpinBlade />
-        <SpinBlade />
-      </SpinLoader>
+      {children}
+      <SpinLoader />
     </Wrapper>
   );
 };

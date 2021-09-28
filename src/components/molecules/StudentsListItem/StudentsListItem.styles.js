@@ -22,7 +22,7 @@ export const StyledAverage = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: ${({ theme }) => theme.fontSize.s};
+  font-size: ${({ theme }) => theme.fontSize.xs};
   color: ${({ theme }) => theme.colors.white};
   font-weight: bold;
   background: ${({ theme, value }) => {
@@ -46,6 +46,6 @@ export const StyledInfo = styled.div`
     font-size: ${({ theme }) => theme.fontSize.l};
   }
   p:last-child {
-    font-size: ${({ theme }) => theme.fontSize.m};
+    font-size: ${({ theme }) => theme.fontSize.s};
   }
 `;

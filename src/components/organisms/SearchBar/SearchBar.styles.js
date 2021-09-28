@@ -9,10 +9,11 @@ export const SearchBarWrapper = styled.div`
   justify-content: flex-start;
   align-items: center;
   padding: 0 40px;
+
   ${Input} {
-    font-size: ${({ theme }) => theme.fontSize.xl};
     width: 100%;
-    max-width: 350px;
+    max-width: 470px;
+    padding: 15px 25px;
     border: 2px solid ${({ theme }) => theme.colors.lightPurple};
   }
 `;
@@ -23,25 +24,28 @@ export const StatusInfo = styled.div`
   margin-right: 40px;
   p {
     margin: 5px;
+    width: max-content;
   }
 `;
 
 export const SearchWrapper = styled.div`
   position: relative;
+  width: 100%;
 `;
 
 export const SearchResults = styled.ul`
   visibility: ${({ isVisible }) => (isVisible ? 'visible' : 'hidden')};
   z-index: 1000;
+  max-width: 470px;
   max-height: 500px;
-  overflow-y: scroll;
+  overflow-y: auto;
   padding: 10px;
   border-radius: 15px;
   list-style: none;
   width: 100%;
   position: absolute;
   left: 0;
-  top: 30px;
+  top: 35px;
   display: flex;
   flex-direction: column;
   background-color: ${({ theme }) => theme.colors.white};

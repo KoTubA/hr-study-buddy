@@ -12,7 +12,7 @@ const Note = ({ title = 'Untitled', content = 'No content', id }) => {
 
   return (
     <NoteWrapper>
-      <Title>{title}</Title>
+      <Title as="h3">{title}</Title>
       <p>{content}</p>
       <StyledDeleteButton aria-label="Delete" onClick={handleRemoveNote} />
     </NoteWrapper>

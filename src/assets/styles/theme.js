@@ -13,10 +13,12 @@ export const theme = {
     lightPurple: '#ECEFF7',
   },
   fontSize: {
-    xxl: '34px',
-    xl: '24px',
+    xxxl: '30px',
+    xxl: '24px',
+    xl: '20px',
     l: '17px',
-    m: '12px',
-    s: '11px',
+    m: '14px',
+    s: '12px',
+    xs: '11px',
   },
 };

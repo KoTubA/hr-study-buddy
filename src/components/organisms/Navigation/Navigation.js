@@ -1,5 +1,6 @@
 import React from 'react';
-import { Logo, StyledLink, Wrapper } from 'components/organisms/Navigation/Navigation.styles';
+import { StyledLink, Wrapper } from 'components/organisms/Navigation/Navigation.styles';
+import Logo from 'components/molecules/Logo/Logo';
 import { useAuth } from 'hooks/useAuth';
 
 const Navigation = () => {
@@ -7,9 +8,7 @@ const Navigation = () => {
 
   return (
     <Wrapper>
-      <Logo>
-        <h1>Study Buddy</h1>
-      </Logo>
+      <Logo />
       <StyledLink to="/group">Dashboard</StyledLink>
       <StyledLink to="/notes">Notes</StyledLink>
       <StyledLink as="a" onClick={auth.signOut}>

@@ -4,13 +4,14 @@ import StudentsListItem from 'components/molecules/StudentsListItem/StudentsList
 import { StyledList } from './StudentsList.styles';
 import { Title } from 'components/atoms/Title/Title';
 import { useGetStudentsByGroupQuery } from 'store';
+import Loading from 'components/molecules/Loading/Loading';
 
 const StudentsList = ({ handleOpenStudentDetails }) => {
   const { id } = useParams();
-  const { data, isLoading } = useGetStudentsByGroupQuery(id);
+  const { data, status } = useGetStudentsByGroupQuery(id);
 
-  if (isLoading) {
-    return <Title>Loading...</Title>;
+  if (status !== 'fulfilled') {
+    return <Loading />;
   }
 
   return (

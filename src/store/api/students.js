@@ -5,7 +5,6 @@ export const studentsApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: '/',
   }),
-  tagTypes: ['Students'],
   endpoints: (builder) => ({
     getStudentsByGroup: builder.query({
       query: (groupId) => {
@@ -17,7 +16,6 @@ export const studentsApi = createApi({
           },
         };
       },
-      providesTags: ['Students'],
     }),
     getStudentById: builder.query({
       query: (studentId) => {
@@ -29,7 +27,6 @@ export const studentsApi = createApi({
           },
         };
       },
-      providesTags: ['Students'],
     }),
     findStudents: builder.query({
       query: (searchPhrase) => {
@@ -43,7 +40,6 @@ export const studentsApi = createApi({
           },
         };
       },
-      providesTags: ['Students'],
     }),
   }),
 });
