@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { Title } from 'components/atoms/Title/Title';
 import { Button } from 'components/atoms/Button/Button';
-import Logo from 'components/molecules/Logo/Logo';
 
 export const FormWrapper = styled.div`
   width: 100%;

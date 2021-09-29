@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback } from 'react';
+import React, { useEffect } from 'react';
 import { Redirect, useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import StudentsList from 'components/organisms/StudentsList/StudentsList';
@@ -28,7 +28,7 @@ const Dashboard = () => {
       handleCloseModal();
       dispatchError();
     }
-  }, [result]);
+  }, [result.isError]);
 
   if (isLoading) {
     return (
