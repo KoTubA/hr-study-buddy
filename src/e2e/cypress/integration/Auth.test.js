@@ -11,7 +11,9 @@ describe('Study buddy app', () => {
     cy.findByText(/password/i)
       .click()
       .type('Test123');
-    cy.findByText(/sign in/i).click();
+    cy.findAllByText(/sign in/i)
+      .eq(1)
+      .click();
 
     cy.findByText(/logged as/i).should('exist');
   });

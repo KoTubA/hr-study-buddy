@@ -9,14 +9,14 @@ describe('Search Bar', () => {
   it('Renders the component', () => {
     render(<SearchBar />);
     screen.getByText('Teacher');
-    screen.getByPlaceholderText('Search');
+    screen.getByPlaceholderText('find student');
   });
 
   it('Displays users when search phrase is matching', async () => {
     render(<SearchBar />);
-    const input = screen.getByPlaceholderText('Search');
-    fireEvent.change(input, { target: { value: 'Low' } });
+    const input = screen.getByPlaceholderText('find student');
+    fireEvent.change(input, { target: { value: 'Emm' } });
 
-    await screen.findByText(/Lowell/);
+    await screen.findByText(/Emmanuel/);
   });
 });

@@ -26,6 +26,13 @@ export const FormWrapper = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  span {
+    padding-bottom: 5px;
+    width: 100%;
+    font-size: ${({ theme }) => theme.fontSize.s};
+    color: ${({ theme }) => theme.colors.errorMsg};
+  }
 `;
 
 export const StyledFormField = styled(FormField)`

@@ -5,7 +5,9 @@ describe('Notes view', () => {
     cy.findByText(/password/i)
       .click()
       .type('Test123');
-    cy.findByText(/sign in/i).click();
+    cy.findAllByText(/sign in/i)
+      .eq(1)
+      .click();
   });
 
   it('Allows to create a new note and delete it', () => {
