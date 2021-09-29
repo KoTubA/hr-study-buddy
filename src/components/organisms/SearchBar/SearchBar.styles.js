@@ -13,7 +13,7 @@ export const SearchBarWrapper = styled.div`
   ${Input} {
     width: 100%;
     max-width: 470px;
-    padding: 15px 25px;
+    padding: 12px 25px;
     border: 2px solid ${({ theme }) => theme.colors.lightPurple};
   }
 `;
@@ -22,10 +22,19 @@ export const StatusInfo = styled.div`
   color: ${({ theme }) => theme.colors.darkGrey};
   font-size: ${({ theme }) => theme.fontSize.l};
   margin-right: 40px;
-  p {
-    margin: 5px;
-    width: max-content;
-  }
+  font-family: 'Roboto', sans-serif;
+`;
+
+export const InfoLabel = styled.div`
+  margin: 5px 5px 0px 5px;
+  width: max-content;
+  font-size: ${({ theme }) => theme.fontSize.s};
+`;
+
+export const InfoAs = styled.div`
+  margin: 2px 5px 5px 5px;
+  width: max-content;
+  font-weight: bold;
 `;
 
 export const SearchWrapper = styled.div`

@@ -4,7 +4,7 @@ import FormField from 'components/molecules/FormField/FormField';
 export const Wrapper = styled.div`
   width: 100%;
   height: 100%;
-  padding: 20px 50px 0px 50px;
+  padding: 20px 50px;
   display: flex;
   flex-direction: column;
 `;
@@ -13,7 +13,7 @@ export const NotesSection = styled.div`
   width: 100%;
   display: grid;
   padding-bottom: 50px;
-  grid-template-columns: 1fr 1.5fr;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 30px;
   align-items: flex-start;
 `;

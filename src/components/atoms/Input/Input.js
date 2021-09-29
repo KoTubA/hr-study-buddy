@@ -10,9 +10,14 @@ export const Input = styled.input`
   resize: none;
   width: 100%;
   font-size: ${({ theme }) => theme.fontSize.m};
+  font-family: 'Roboto', sans-serif;
 
   &:focus {
     outline: none;
     box-shadow: -2px 4px 10px rgba(115, 124, 142, 0.3);
+  }
+
+  &::placeholder {
+    color: ${({ theme }) => theme.colors.placeholder};
   }
 `;

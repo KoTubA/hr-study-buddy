@@ -2,7 +2,7 @@ import { Input } from 'components/atoms/Input/Input';
 import React, { useState, useEffect } from 'react';
 import debounce from 'lodash.debounce';
 import { useCombobox } from 'downshift';
-import { SearchBarWrapper, SearchResults, SearchResultsItem, SearchWrapper, StatusInfo } from 'components/organisms/SearchBar/SearchBar.styles';
+import { SearchBarWrapper, SearchResults, SearchResultsItem, SearchWrapper, StatusInfo, InfoLabel, InfoAs } from 'components/organisms/SearchBar/SearchBar.styles';
 import { useLazyFindStudentsQuery } from 'store';
 
 export const SearchBar = () => {
@@ -26,10 +26,8 @@ export const SearchBar = () => {
   return (
     <SearchBarWrapper>
       <StatusInfo>
-        <p>Logged as:</p>
-        <p>
-          <strong>Teacher</strong>
-        </p>
+        <InfoLabel>Logged as:</InfoLabel>
+        <InfoAs>Teacher</InfoAs>
       </StatusInfo>
       <SearchWrapper {...getComboboxProps()}>
         <Input {...getInputProps()} name="Search" id="Search" placeholder="find student" spellCheck="false" />

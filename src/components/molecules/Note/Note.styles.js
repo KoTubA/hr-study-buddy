@@ -15,6 +15,8 @@ export const NoteWrapper = styled.div`
   p {
     margin: 0;
     color: ${({ theme }) => theme.colors.darkGrey};
+    font-size: ${({ theme }) => theme.fontSize.s};
+    line-height: 1.7;
   }
 `;
 

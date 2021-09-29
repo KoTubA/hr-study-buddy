@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import StudentsListItem from 'components/molecules/StudentsListItem/StudentsListItem';
 import { StyledList } from './StudentsList.styles';
@@ -8,21 +8,22 @@ import Loading from 'components/molecules/Loading/Loading';
 
 const StudentsList = ({ handleOpenStudentDetails }) => {
   const { id } = useParams();
-  const { data, status } = useGetStudentsByGroupQuery(id);
+  const { data, status, isError } = useGetStudentsByGroupQuery(id);
+
+  if (isError) {
+    return <Title as="h3">Something went wrong. Please try again, or contact our support.</Title>;
+  }
 
   if (status !== 'fulfilled') {
     return <Loading />;
   }
 
   return (
-    <>
-      <Title>Students list</Title>
-      <StyledList>
-        {data.students.map((userData) => (
-          <StudentsListItem onClick={() => handleOpenStudentDetails(userData.id)} key={userData.name} userData={userData} />
-        ))}
-      </StyledList>
-    </>
+    <StyledList>
+      {data.students.map((userData) => (
+        <StudentsListItem onClick={() => handleOpenStudentDetails(userData.id)} key={userData.name} userData={userData} />
+      ))}
+    </StyledList>
   );
 };
 

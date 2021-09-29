@@ -22,7 +22,9 @@ const StudentDetails = ({ student, handleClose }) => {
           </StyledSubjectInfo>
         ))}
       </StyledDetails>
-      <Button onClick={handleClose}>Close</Button>
+      <Button onClick={handleClose} isBig>
+        Close
+      </Button>
     </Wrapper>
   );
 };

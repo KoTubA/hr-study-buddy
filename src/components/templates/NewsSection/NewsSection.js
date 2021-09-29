@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ArticleWrapper, ContentWrapper, NewsSectionHeader, TitleWrapper, Wrapper, LoaderWrapper } from './NewsSection.styles';
-import { Button } from 'components/atoms/Button/Button';
+import { ArticleWrapper, ContentWrapper, NewsSectionHeader, TitleWrapper, Wrapper, LoaderWrapper, DataWrapper, ArticleButton } from './NewsSection.styles';
 import Loading from 'components/molecules/Loading/Loading';
 
 export const query = `
@@ -58,11 +57,13 @@ const NewsSection = () => {
               <h3>{title}</h3>
               <p>{category}</p>
             </TitleWrapper>
-            <ContentWrapper>
-              <p>{content}</p>
+            <DataWrapper>
+              <ContentWrapper>
+                <p>{content}</p>
+                <ArticleButton isBig>Read more</ArticleButton>
+              </ContentWrapper>
               {image ? <img src={image.url} alt="article" /> : null}
-            </ContentWrapper>
-            <Button isBig>Read more</Button>
+            </DataWrapper>
           </ArticleWrapper>
         ))
       ) : (

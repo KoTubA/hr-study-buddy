@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { ViewWrapper } from 'components/molecules/ViewWrapper/ViewWrapper';
+import { Button } from 'components/atoms/Button/Button';
 
 export const Wrapper = styled.div`
   grid-row: 1 / 3;
@@ -9,7 +10,7 @@ export const Wrapper = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  padding: 20px 50px;
+  padding: 10px 50px;
   overflow-y: scroll;
 `;
 
@@ -28,6 +29,7 @@ export const ArticleWrapper = styled(ViewWrapper)`
   color: ${({ theme }) => theme.colors.darkGrey};
   p {
     line-height: 1.6;
+    font-size: ${({ theme }) => theme.fontSize.m};
   }
 `;
 
@@ -44,10 +46,18 @@ export const TitleWrapper = styled.div`
 
 export const ContentWrapper = styled.div`
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+`;
+
+export const DataWrapper = styled.div`
+  display: flex;
+
   img {
-    margin-left: 35px;
-    max-width: 200px;
+    padding: 1rem 0rem 0rem 4rem;
     object-fit: cover;
+    width: 50%;
   }
 `;
 
@@ -57,4 +67,8 @@ export const LoaderWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+`;
+
+export const ArticleButton = styled(Button)`
+  margin: 1.5rem 0rem 0rem 0rem;
 `;

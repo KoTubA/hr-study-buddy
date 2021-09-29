@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useCallback } from 'react';
 import { Redirect, useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import StudentsList from 'components/organisms/StudentsList/StudentsList';
@@ -9,18 +9,26 @@ import StudentDetails from 'components/molecules/StudentDetails/StudentDetails';
 import Modal from 'components/organisms/Modal/Modal';
 import { useGetGroupsQuery, useLazyGetStudentByIdQuery } from 'store';
 import Loading from 'components/molecules/Loading/Loading';
+import { useError } from 'hooks/useError';
 
 const Dashboard = () => {
   const { id } = useParams();
   const { isOpen, handleOpenModal, handleCloseModal } = useModal();
-  const { data, isLoading } = useGetGroupsQuery();
-
+  const { data, isLoading, isError } = useGetGroupsQuery();
   const [trigger, result] = useLazyGetStudentByIdQuery();
+  const { dispatchError } = useError();
 
   const handleOpenStudentDetails = (id) => {
     trigger(id);
     handleOpenModal();
   };
+
+  useEffect(() => {
+    if (result.isError) {
+      handleCloseModal();
+      dispatchError();
+    }
+  }, [result]);
 
   if (isLoading) {
     return (
@@ -30,12 +38,22 @@ const Dashboard = () => {
     );
   }
 
+  if (isError) {
+    return (
+      <Wrapper>
+        <Title as="h3">Something went wrong. Please try again, or contact our support.</Title>
+      </Wrapper>
+    );
+  }
+
   if (!id && data.groups.length > 0) return <Redirect to={`/group/${data.groups[0].id}`} />;
 
   return (
     <Wrapper>
       <TitleWrapper>
-        <Title as="h2">Group {id}</Title>
+        <Title as="h2" isBig>
+          Group {id}
+        </Title>
         <nav>
           {data.groups.map(({ id }) => (
             <Link key={id} to={`/group/${id}`}>

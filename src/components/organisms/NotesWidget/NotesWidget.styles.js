@@ -15,23 +15,24 @@ export const Wrapper = styled.div`
 `;
 
 export const WidgetHandler = styled.button`
-  width: 80px;
+  width: 100px;
   height: 30px;
   background-color: ${({ theme }) => theme.colors.darkGrey};
   transform: rotate(-90deg);
   position: absolute;
-  left: -57px;
+  left: -67px;
   border-radius: 8px 8px 0 0;
-  top: 40px;
+  top: 33px;
   color: white;
   border: none;
   cursor: pointer;
+  font-size: ${({ theme }) => theme.fontSize.m};
 `;
 
 export const NotesWrapper = styled.div`
   max-height: 700px;
   overflow-y: auto;
-  padding: 20px 60px;
+  padding: 20px 40px 20px 50px;
   display: flex;
   flex-direction: column;
 

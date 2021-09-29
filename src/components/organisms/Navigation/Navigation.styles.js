@@ -8,7 +8,7 @@ export const Wrapper = styled.nav`
   flex-direction: column;
   border-right: 1px solid ${({ theme }) => theme.colors.darkPurple};
   justify-content: flex-start;
-  padding: 30px 0;
+  padding: 20px 0;
   grid-row: 1 / 3;
   grid-column: 1 / 1;
 `;
@@ -19,8 +19,9 @@ export const StyledLink = styled(NavLink).attrs({ activeClassName })`
   font-weight: bold;
   text-decoration: none;
   color: ${({ theme }) => theme.colors.darkGrey};
+  font-size: ${({ theme }) => theme.fontSize.m};
   text-align: right;
-  margin: 15px 20px 15px auto;
+  margin: 10px 25px 10px auto;
   position: relative;
   &.${activeClassName} {
     &::after {
@@ -32,11 +33,11 @@ export const StyledLink = styled(NavLink).attrs({ activeClassName })`
     transition: opacity 0.4s ease-in-out;
     content: '';
     position: absolute;
-    width: 18px;
+    width: 20px;
     height: 3px;
     top: 50%;
     transform: translateY(-50%);
-    right: -20px;
+    right: -25px;
     background-color: ${({ theme }) => theme.colors.darkPurple};
   }
 `;
