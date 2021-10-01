@@ -5,6 +5,7 @@ const AuthContext = React.createContext({});
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [isLoading, setisLoading] = useState(true);
   const { dispatchError } = useError();
 
   useEffect(() => {
@@ -19,12 +20,15 @@ export const AuthProvider = ({ children }) => {
           });
           if (response.ok) {
             const data = await response.json();
-            setUser(data);
+            await setUser(data);
           }
         } catch (e) {
           console.log(e);
         }
+        await setisLoading(false);
       })();
+    } else {
+      setisLoading(false);
     }
   }, []);
 
@@ -51,7 +55,7 @@ export const AuthProvider = ({ children }) => {
     localStorage.removeItem('token');
   };
 
-  return <AuthContext.Provider value={{ user, signIn, signOut }}>{children}</AuthContext.Provider>;
+  return <AuthContext.Provider value={{ user, isLoading, signIn, signOut }}>{children}</AuthContext.Provider>;
 };
 
 export const useAuth = () => {

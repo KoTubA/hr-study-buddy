@@ -12,7 +12,7 @@ const Root = () => {
   return (
     <>
       {error ? <ErrorMessage message={errormsg} /> : null}
-      {auth.user ? <AuthenticatedApp /> : <UnauthenticatedApp />}
+      {auth.isLoading ? null : auth.user ? <AuthenticatedApp /> : <UnauthenticatedApp />}
     </>
   );
 };
