@@ -9,7 +9,6 @@ export const ErrorProvider = ({ children }) => {
   let timer;
   const setTimer = () => {
     timer = setTimeout(() => {
-      console.log('KONIEC');
       setError(false);
       setErrormsg('');
     }, 7000);

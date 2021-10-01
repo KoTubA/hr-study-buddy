@@ -67,6 +67,8 @@ export const SearchResultsItem = styled.li`
   background-color: ${({ theme, isHighlighted }) => (isHighlighted ? theme.colors.lightPurple : theme.colors.white)};
   width: 100%;
   padding: 20px 5px;
+  cursor: pointer;
+
   &:hover {
     background-color: ${({ theme }) => theme.colors.lightPurple};
   }
