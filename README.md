@@ -2,7 +2,7 @@
 
 ## Project prupose
 
-**Studdy Buddy -** an app for college teachers to manage students. It was created while learning React on the [hello roman](https://www.youtube.com/channel/UCq8XmOMtrUCb8FcFHQEd8_g) channel for supporters. The repository contains the code for each of the **26** available lessons and has been split into separate branches. The main branch contains additional functionality not covered in the course (course assumptions), the last branch related to the course is `summary-refactor`.
+**Studdy Buddy -** an app for college teachers to manage students. It was created while learning React on the [hello roman](https://www.youtube.com/channel/UCq8XmOMtrUCb8FcFHQEd8_g) channel for supporters. The repository has been divided into separate branches for each of the **26** available lessons. The main branch contains additional functionality not covered in the course (course assumptions), the last branch related to the course is `summary-refactor`.
 
 <img src="./design/desktop-design-dashboard.png" alt="desktop-design-dashboard" width="100%"/>
 
